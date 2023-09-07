@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
-    Cliente findByTelefone(String nome);
+    DadosListagemCliente findByTelefone(String telefone);
 }
 

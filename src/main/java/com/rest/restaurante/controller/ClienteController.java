@@ -26,10 +26,17 @@ public class ClienteController {
 
     }
 
-    @GetMapping("/cliente/{telefone}")
-    public Cliente listar(@PathVariable String telefone){
+    @GetMapping("{telefone}")
+    public DadosListagemCliente listar(@PathVariable String telefone){
 
+        System.out.println(telefone);
         return repository.findByTelefone(telefone);
+
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosCliente dados){
 
     }
 
